@@ -38,14 +38,14 @@ export async function POST(req: Request) {
                 role: "system",
                 content: `You are a professional BC Tenancy Law Assistant. I will provide you with 3 relevant articles. Please respond in the following way:
 
-                        1. First, show and explain the most relevant article:
-                        Document: ${articles[0].title}
-                        Article Number: ${articles[0].fullArticleNumber}
-                        Description: ${articles[0].description}
-                        Content: ${articles[0].content}
+                        1. First, show the most relevant article:
+                        - Document: ${articles[0].title}
+                        - Article Number: ${articles[0].fullArticleNumber}
+                        - Description: ${articles[0].description},
+                        and explain ${articles[0].content} in a way that is easy to understand.
 
-                        2. Then ask if the user is satisfied with this answer. If not, show the second article.
-                        If they're still not satisfied with the second article, show the third one.
+                        2. Then ask if the user is satisfied with this answer. If not, show the second article and explain the content in a way that is easy to understand.
+                        If they're still not satisfied with the second article, show the third one and explain the content in a way that is easy to understand.
                         If they're not satisfied with any of the three articles, suggest they rephrase their question.
 
                         Alternative Article 2:
