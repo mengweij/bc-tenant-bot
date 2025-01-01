@@ -9,6 +9,10 @@ export async function POST(req: Request) {
         const { messages } = await req.json()
         const latestMessage = messages[messages.length - 1]?.content
 
+        if (!process.env.PINECONE_API_KEY || !process.env.PINECONE_INDEX || !process.env.OPENAI_API_KEY) {
+            throw new Error("Missing environment variables")
+        }
+
         const pinecone = new Pinecone()
 
         const embeddings = new OpenAIEmbeddings({
@@ -78,6 +82,10 @@ export async function POST(req: Request) {
             console.error("Error querying Pinecone:", error)
         }
     } catch (error) {
-        throw new Error("Error in chat API route")
+        console.error("API route error:", error)
+        return new Response(
+            JSON.stringify({ error: "An error occurred processing your request" }), 
+            { status: 500 }
+        )
     }
 }
