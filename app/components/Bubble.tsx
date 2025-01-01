@@ -1,10 +1,15 @@
 import { Message } from "ai"
+import ReactMarkdown from 'react-markdown'
 
 const Bubble = ({ message }: { message: Message }) => {
     const { role, content } = message;
     return (
         <div className={`bubble ${role}`}>
-            {content}
+            {role === 'assistant' ? (
+                <ReactMarkdown>
+                    {content}
+                </ReactMarkdown>
+            ) : content}
         </div>
     )
 }
