@@ -1,6 +1,6 @@
 import PromptSuggestionButton from "./PromptSuggestionButton";
 
-const PromptSuggestionsRow = ({ onPromptClick }) => {
+const PromptSuggestionsRow = ({ onPromptClick }: { onPromptClick: (prompt: string) => void }) => {
     const prompts = [
         "What is the difference between a lease and a tenancy agreement?",
         "How much deposit can a landlord require?",
