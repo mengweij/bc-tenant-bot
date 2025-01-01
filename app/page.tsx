@@ -3,7 +3,6 @@
 import Image from "next/image"
 import { useChat } from "ai/react"
 import { Message } from "ai"
-import { useEffect, useRef } from "react"
 import Bubble from "./components/Bubble"
 import LoadingBubble from "./components/LoadingBubble"
 import PromptSuggestionsRow from "./components/PromptSuggestionsRow"
