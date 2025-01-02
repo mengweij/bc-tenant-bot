@@ -8,7 +8,7 @@ const PromptSuggestionsRow = ({ onPromptClick }: { onPromptClick: (prompt: strin
         "What should I do if my landlord wants to evict me?"
     ]
     return (
-        <div className="prompt-suggestions-row">
+        <div className="flex flex-col gap-2.5 w-full">
             {prompts.map((prompt, index) => 
                 <PromptSuggestionButton 
                     key={`suggestion-${index}`} 
