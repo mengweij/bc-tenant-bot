@@ -1,6 +1,6 @@
 const PromptSuggestionButton = ({ text, onClick }: { text: string, onClick: () => void }) => {
     return (
-        <button className="border-2 border-dashed border-primary rounded-lg p-1 hover:bg-primary hover:text-white" onClick={onClick}>
+        <button className="border border-dashed border-border rounded-lg p-1" onClick={onClick}>
             {text}
         </button>
     )

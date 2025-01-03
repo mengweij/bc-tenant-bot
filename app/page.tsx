@@ -9,7 +9,7 @@ import Bubble from "./components/Bubble"
 import LoadingBubble from "./components/LoadingBubble"
 import PromptSuggestionsRow from "./components/PromptSuggestionsRow"
 
-import AppLogo from "./assets/AppLogo.png"
+import AppLogo from "./assets/AppLogo-white.png"
 
 const Home = () => {
     const { append, isLoading, messages, input, handleInputChange, handleSubmit } = useChat();
@@ -40,7 +40,7 @@ const Home = () => {
                 className="cursor-pointer"
                 onClick={() => window.location.reload()}
             />
-            <section className={`w-full flex-1 min-h-0 border-t-2 border-primary ${noMessage ? "flex flex-col justify-center" : "flex flex-col overflow-y-auto"}`}>
+            <section className={`w-full flex-1 min-h-0 border-t border-border ${noMessage ? "flex flex-col justify-center" : "flex flex-col overflow-y-auto"}`}>
                 {noMessage ? (
                     <div className="flex flex-col gap-2.5 items-center">
                         <div className="prose">
@@ -60,7 +60,7 @@ const Home = () => {
                     </div>
                 )}
             </section>
-            <form onSubmit={handleSubmit} className="h-15 w-full flex border-t-2 border-primary pt-5 rounded-b-lg overflow-hidden flex-shrink-0">
+            <form onSubmit={handleSubmit} className="h-15 w-full flex border-t border-border pt-5 rounded-b-lg overflow-hidden flex-shrink-0">
                 <input 
                     className="w-[85%] border-none p-2.5 text-base bg-white"
                     onChange={handleInputChange} 

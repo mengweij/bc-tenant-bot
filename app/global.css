@@ -18,11 +18,11 @@
   }
 
   .bubble {
-    @apply m-2.5 p-2.5 text-base border-none text-primary shadow-custom w-4/5 text-left;
+    @apply m-2.5 p-2.5 text-base border-none text-body shadow-md w-4/5 text-left;
   }
 
   .bubble.user {
-    @apply rounded-[10px_10px_0_10px] bg-primary text-white ml-auto;
+    @apply rounded-[10px_10px_0_10px] bg-grey text-body ml-auto;
   }
 
   .bubble.assistant {
@@ -33,11 +33,15 @@
   .bubble.assistant h1,
   .bubble.assistant h2,
   .bubble.assistant h3 {
-    @apply mt-2 mb-2;
+    @apply mt-2 mb-2 text-primary;
   }
 
   .bubble.assistant p {
     @apply my-2;
+  }
+
+  .bubble.assistant strong {
+    @apply text-primary;
   }
 
   .bubble.assistant ul,
