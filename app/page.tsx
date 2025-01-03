@@ -34,7 +34,7 @@ const Home = () => {
     }
 
     return (
-        <main className="w-5/6 h-5/6 rounded-2xl shadow-custom flex flex-col p-5 text-primary gap-2.5 items-center">
+        <main className="w-11/12 h-5/6 rounded-2xl shadow-custom flex flex-col p-5 text-primary gap-2.5 items-center">
             <Image 
                 src={AppLogo} 
                 width={300} 
