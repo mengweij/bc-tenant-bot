@@ -11,6 +11,9 @@ import PromptSuggestionsRow from "./components/PromptSuggestionsRow"
 
 import AppLogo from "./assets/AppLogo-white.png"
 
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+
 const Home = () => {
     const { append, isLoading, messages, input, handleInputChange, handleSubmit } = useChat();
     const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -60,20 +63,9 @@ const Home = () => {
                     </div>
                 )}
             </section>
-            <form onSubmit={handleSubmit} className="h-15 w-full flex border-t border-border pt-5 rounded-b-lg overflow-hidden flex-shrink-0">
-                <input 
-                    className="w-[85%] border-none p-2.5 text-base bg-white"
-                    onChange={handleInputChange} 
-                    value={input} 
-                    placeholder="Your question here..."
-                    aria-label="Question input"
-                />
-                <input 
-                    type="submit" 
-                    value="Ask" 
-                    className="w-[15%] border-none p-2.5 text-base bg-primary text-white cursor-pointer"
-                    aria-label="Submit question"
-                />
+            <form onSubmit={handleSubmit} className="w-full flex border-t border-border p-1 pt-3 overflow-hidden space-x-2">
+                <Input type="text" placeholder="Your question here..." onChange={handleInputChange} value={input} />
+                <Button type="submit" size="lg">Ask</Button>
             </form>
         </main>
     )
