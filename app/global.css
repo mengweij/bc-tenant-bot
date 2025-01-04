@@ -143,12 +143,46 @@
   }
 
   .bubble.assistant strong {
-    @apply text-primary;
+    @apply bg-primary/10 text-primary font-semibold px-1 rounded;
+  }
+
+  .bubble.assistant blockquote {
+    @apply my-4 pl-4 border-l-4 border-primary/50 bg-primary/5 py-2 pr-2 rounded-r;
+  }
+
+  .bubble.assistant blockquote p {
+    @apply my-1 text-primary/90;
+  }
+
+  .bubble.assistant blockquote strong {
+    @apply bg-transparent text-primary font-semibold px-0;
+  }
+
+  .bubble.assistant ul {
+    @apply list-disc;
+  }
+
+  .bubble.assistant ol {
+    @apply list-decimal;
   }
 
   .bubble.assistant ul,
   .bubble.assistant ol {
-    @apply my-2 pl-6;
+    @apply my-4 ml-4;
+  }
+
+  .bubble.assistant li {
+    @apply my-1 pl-1 marker:text-primary/70;
+  }
+
+  .bubble.assistant li > p {
+    @apply my-0 inline;
+  }
+
+  /* Nested lists */
+  .bubble.assistant li > ul,
+  .bubble.assistant li > ol {
+    @apply my-1 ml-4;
   }
 
   .bubble.assistant pre {
