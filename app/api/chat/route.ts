@@ -5,6 +5,13 @@ import { PineconeStore } from "@langchain/pinecone"
 import { OpenAIEmbeddings } from "@langchain/openai"
 import { extractKeywords } from '@/app/utils/keywordExtractor';
 
+interface Article {
+    content: string;
+    title: string;
+    fullArticleNumber: string;
+    description: string;
+}
+
 export async function POST(req: Request) {
     try {
         const { messages } = await req.json()
@@ -41,7 +48,7 @@ export async function POST(req: Request) {
 
             const keywords = extractKeywords(latestMessage);
 
-            const highlightContent = (article: any) => article.content.split(' ').map((word: string) => {
+            const highlightContent = (article: Article) => article.content.split(' ').map((word: string) => {
                 const wordLower = word.toLowerCase().replace(/[^\w]/g, '');
                 return keywords.includes(wordLower) ? 
                     `==${word}==` : 
@@ -58,7 +65,7 @@ export async function POST(req: Request) {
                         > Document: ${articles[0].title}  
                         > Article Number: ${articles[0].fullArticleNumber}  
                         > Description: ${articles[0].description}  
-                        and explain article content ${highlightedContent[0].content} in a way that is easy to understand.
+                        and explain article content ${highlightedContent[0]} in a way that is easy to understand.
 
                         2. Then ask if the user is satisfied with this answer. If not, show the second article and explain the content in a way that is easy to understand.
                         If they're still not satisfied with the second article, show the third one and explain the content in a way that is easy to understand.
@@ -68,13 +75,13 @@ export async function POST(req: Request) {
                         Document: ${articles[1].title}
                         Article Number: ${articles[1].fullArticleNumber}
                         Description: ${articles[1].description}
-                        Content: ${highlightedContent[1].content}
+                        Content: ${highlightedContent[1]}
 
                         Alternative Article 3:
                         Document: ${articles[2].title}
                         Article Number: ${articles[2].fullArticleNumber}
                         Description: ${articles[2].description}
-                        Content: ${highlightedContent[2].content}
+                        Content: ${highlightedContent[2]}
 
                         Remember:
                         - Only show one article at a time
