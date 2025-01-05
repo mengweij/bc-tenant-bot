@@ -39,6 +39,8 @@ Pinecone powers efficient vector similarity search for fast and accurate lookups
 
 Built with React, Tailwind CSS, and Shadcn UI to ensure a responsive and intuitive user interface.
 
+***Note**: This repository does not include scripts for creating or populating the vector database.*
+
 ## Tech Stack
 
 **Frontend**
@@ -62,9 +64,8 @@ Built with React, Tailwind CSS, and Shadcn UI to ensure a responsive and intuiti
 •	**OpenAI Embeddings** for vector generation
 
 ## Planned Enhancements
-- [ ] User Authentication
-- [ ] Multilingual Support
-- [ ] Expanded Legal Database
+- [ ] User Authentication – Enhance security with user login and access control for API and data protection.
+- [ ] Multilingual Support – Provide language options to better serve BC’s diverse immigrant community.
 
 ## License
 
